@@ -91,11 +91,12 @@ namespace XMLWeather
         {
             Form1.location = locationInput.Text;
             locationInput.Text = "";
-            Form1.days.Clear();
+            //Form1.days.Clear();
 
             try
             {
                 Form1.ExtractForecast();
+                Form1.days.RemoveRange(0, 8);
                 Form1.ExtractCurrent();
             }
             catch
